@@ -47,9 +47,9 @@ def regExExerciseOne(input_text):
     Output: Alice owns 3 apples, Bob owns 5 oranges, and Charlie owns 2 bananas. David owns 8 grapes, 
             and Emily owns 4 peaches."
     """
-    pattern = r""
-    replacement = ""
-    modified_text = input_text
+    pattern = r"has"
+    replacement = "owns"
+    modified_text = re.sub(pattern, replacement, input_text)
 
     return modified_text
 
@@ -77,9 +77,9 @@ Some commonly used character classes have shorthands.
 
 def regExExerciseTwo(input_text):
     # TODO: Complete this function so that it finds all numbers and replaces them with the letter 'X'
-    pattern = r""
-    replacement = ""
-    modified_text = input_text
+    pattern = r"\d"
+    replacement = "X"
+    modified_text = re.sub(pattern, replacement, input_text)
 
     return modified_text
 
@@ -121,6 +121,8 @@ def regExExerciseThree(input_string):
     Outcome:
     False, as it doesn't contain characters following "." symbol.
     """
-    pattern = r""
+    pattern = r"(\w|\d)+@(\w|\d)+\.(\w|\d){3}"
 
-    return None
+    matched = re.match(pattern, input_string)
+
+    return True if matched != None else False
