@@ -121,7 +121,7 @@ def regExExerciseThree(input_string):
     Outcome:
     False, as it doesn't contain characters following "." symbol.
     """
-    pattern = r"(\w|\d)+@(\w|\d)+\.(\w|\d){3}"
+    pattern = r"(\w|\d)+@(\w|\d)+\.(\w|\d){1,3}"
 
     matched = re.match(pattern, input_string)
 
